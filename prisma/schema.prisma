@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Ticket {
+  id        Int      @id @default(autoincrement())
+  title     String
+  category  String
+  priority  String
+  status    String   @default("Open")
+  notes     String?
+  createdAt DateTime @default(now())
+}
